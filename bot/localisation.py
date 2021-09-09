@@ -20,7 +20,7 @@ class Localisation:
     
     COMPRESS_SUCCESS = """⁍ <b>Downloaded In</b> {}
 ⁍ <b>Compressed In</b> {}
-⁍ </b>Uploaded In</b> {}
+⁍ <b>Uploaded In</b> {}
 © @DevilBotz</b>
 """
 
