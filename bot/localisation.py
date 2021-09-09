@@ -1,57 +1,54 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-# (c) @AbirHasan2005
-
 from bot.get_cfg import get_config
 
 
 class Localisation:
-    START_TEXT = "Hello, \n\nThis is a Telegram <b>Video Compress Bot</b>. \n\n<b>Please send me any Telegram big video file I will compress it as s small video file!</b> \n\n/help for more details. \n\nSupport Group: @Linux_Repo"
+    START_TEXT = "<b>Hai , This A Video Compressor Bot </b>"
    
-    ABS_TEXT = " Please don't be selfish."
+    ABS_TEXT = " Please Dont Be Selfish."
     
-    FORMAT_SELECTION = "Select the desired format: <a href='{}'>file size might be approximate</a> \nIf you want to set custom thumbnail, send photo before or quickly after tapping on any of the below buttons.\nYou can use /deletethumbnail to delete the auto-generated thumbnail."
+    FORMAT_SELECTION = "Select The Format To Convert Or Download: <a href='{}'>File Size Might Be Approximate</a> \nSend Photo To Set custom thumbnail Or Use /deletethumbnail To Clear Thumbnail Data."
     
+    DOWNLOAD_START = "<b>Downloading ⬇️</b>"
     
-    DOWNLOAD_START = "📥 Downloading ... 📥 \n"
+    UPLOAD_START = "<b>Uploading ⬆️</b>"
     
-    UPLOAD_START = "📤 Uploading ... 📤 \n"
+    COMPRESS_START = "<b>Compressing The File...⏳</b>"
     
-    COMPRESS_START = "📀 Trying to compress ... 📀"
+    RCHD_BOT_API_LIMIT = "<b>Size Greater Than Maximum Allowed Size (50MB). Neverthless, Trying To Upload.</b>"
     
-    RCHD_BOT_API_LIMIT = "size greater than maximum allowed size (50MB). Neverthless, trying to upload."
+    RCHD_TG_API_LIMIT = "⁍ <b>Downloaded In</b> {} </b>Seconds</b>.\n⁍ <b>Detected File Size</b> : {}\n</b>Sorry. But, I Cannot Upload Files Greater Than 1.9GB Due To Telegram API Limitations.<b>"
     
-    RCHD_TG_API_LIMIT = "Downloaded in {} seconds.\nDetected File Size: {}\nSorry. But, I cannot upload files greater than 1.95GB due to Telegram API limitations."
-    
-    COMPRESS_SUCCESS = "📥 Downloaded in {}\n\n📀 Compressed in {}\n\n📤 Uploaded in {}\n\nBy @Discovery_Updates"
+    COMPRESS_SUCCESS = """⁍ <b>Downloaded In</b> {}
+⭕<b>Compressed In</b> {}
+⭕</b>Uploaded In</b> {}
+© @David_Botz</b>
+"""
 
-    COMPRESS_PROGRESS = "⏳ ETA: {}\n🚀 Progress: {}%"
+    COMPRESS_PROGRESS = "<b>⁍ ETA</b> : {}\n⁍ <b>Progress </b>: {}%"
 
-    SAVED_CUSTOM_THUMB_NAIL = "Custom video / file thumbnail saved. This image will be used in the video / file."
+    SAVED_CUSTOM_THUMB_NAIL = "<b>Custom Video / File Thumbnail Saved. This Image Will Be Used In The Video / File.</b>"
     
-    DEL_ETED_CUSTOM_THUMB_NAIL = "✅ Custom thumbnail cleared succesfully."
+    DEL_ETED_CUSTOM_THUMB_NAIL = "<b>✓ Custom Thumbnail Cleared Successfully.</b>"
     
-    FF_MPEG_DEL_ETED_CUSTOM_MEDIA = "✅ Media cleared succesfully."
+    FF_MPEG_DEL_ETED_CUSTOM_MEDIA = "<b>✓ Media cleared succesfully.</b>"
     
-    SAVED_RECVD_DOC_FILE = "✅ Downloaded Successfully."
+    SAVED_RECVD_DOC_FILE = "<b>✓ Downloaded Successfully.</b>"
     
     CUSTOM_CAPTION_UL_FILE = " "
     
-    NO_CUSTOM_THUMB_NAIL_FOUND = "No Custom ThumbNail found."
+    NO_CUSTOM_THUMB_NAIL_FOUND = "<b>No Custom ThumbNail Found.</b>"
     
-    NO_VOID_FORMAT_FOUND = "no-one gonna help you\n{}"
+    NO_VOID_FORMAT_FOUND = "<b>Sorry You Cant Use It , Please Try Again With Correct One\n{}</b>"
     
-    USER_ADDED_TO_DB = "User <a href='tg://user?id={}'>{}</a> added to {} till {}."
+    USER_ADDED_TO_DB = "⁍ User <a href='tg://user?id={}'>{}</a> Added To {} Till {}."
     
-    FF_MPEG_RO_BOT_STOR_AGE_ALREADY_EXISTS = "⚠️ Already one Process going on! ⚠️ \n\nCheck Live Status on Updates Channel."
+    FF_MPEG_RO_BOT_STOR_AGE_ALREADY_EXISTS = "<b>Already One Person Using Me</b>"
     
     HELP_MESSAGE = get_config(
         "STRINGS_HELP_MESSAGE",
-        "Hi, I am Video Compressor Bot \n\n1. Send me your telegram big video file \n2. Reply to the file with: `/compress 50` \n\nSupport Group: @Linux_Repo"
+        "<b>1. Please Send Me Any Telegram Big File I Will Try My Best To Convert It On To Small File \n2. Reply To The File - /compress And Persentage \nEg:- <code>/compress 50</code> \n\n© @David_Botz</b>"
     )
     WRONG_MESSAGE = get_config(
         "STRINGS_WRONG_MESSAGE",
-        "current CHAT ID: <code>{CHAT_ID}</code>"
+        "Current CHAT ID: <code>{CHAT_ID}</code>"
     )
-
-    
