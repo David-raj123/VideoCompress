@@ -190,7 +190,7 @@ async def incoming_compress_message_f(bot, update):
         bst_now = utc_now + datetime.timedelta(minutes=00, hours=6)
         bst = bst_now.strftime("%d/%m/%Y, %H:%M:%S")
         now = f"\n{ist} (GMT+05:30)`\n`{bst} (GMT+06:00)"
-        download_start = await bot.send_message(chat_id, f"**Bot Become Busy Now !!** \n\nDownload Started at `{now}`",
+        download_start = await bot.send_message(chat_id, f"**Working...⏳ [ Bot Is Busy ]** \n\nDownload Started At `{now}`",
                                                 parse_mode="markdown")
         try:
             d_start = time.time()
@@ -217,7 +217,7 @@ async def incoming_compress_message_f(bot, update):
             if (video is None):
                 try:
                     await sent_message.edit_text(
-                        text="Download stopped"
+                        text="Download Stopped"
                     )
                     chat_id = LOG_CHANNEL
                     utc_now = datetime.datetime.utcnow()
@@ -227,13 +227,13 @@ async def incoming_compress_message_f(bot, update):
                     bst = bst_now.strftime("%d/%m/%Y, %H:%M:%S")
                     now = f"\n{ist} (GMT+05:30)`\n`{bst} (GMT+06:00)"
                     await bot.send_message(chat_id,
-                                           f"**Download Stopped, Bot is Free Now !!** \n\nProcess Done at `{now}`",
+                                           f"**Download Stopped [ Bot is Free Now ]** \n\nProcess Done At `{now}`",
                                            parse_mode="markdown")
                     await download_start.delete()
                 except:
                     pass
                 delete_downloads()
-                LOGGER.info("Download stopped")
+                LOGGER.info("Download Stopped")
                 return
         except (ValueError) as e:
             try:
@@ -274,7 +274,7 @@ async def incoming_compress_message_f(bot, update):
         if duration is None or bitrate is None:
             try:
                 await sent_message.edit_text(
-                    text="⚠️ Getting video meta data failed ⚠️"
+                    text="Failed To Get Video MetaData"
                 )
                 chat_id = LOG_CHANNEL
                 utc_now = datetime.datetime.utcnow()
@@ -283,8 +283,7 @@ async def incoming_compress_message_f(bot, update):
                 bst_now = utc_now + datetime.timedelta(minutes=00, hours=6)
                 bst = bst_now.strftime("%d/%m/%Y, %H:%M:%S")
                 now = f"\n{ist} (GMT+05:30)`\n`{bst} (GMT+06:00)"
-                await bot.send_message(chat_id, f"**Download Failed, Bot is Free Now !!** \n\nProcess Done at `{now}`",
-                                       parse_mode="markdown")
+                await bot.send_message(chat_id, f"**Download Failed [ Bot Is Free ]** \n\nProcess Done At `{now}`", parse_mode="markdown")
                 await download_start.delete()
             except:
                 pass
@@ -303,7 +302,7 @@ async def incoming_compress_message_f(bot, update):
         bst = bst_now.strftime("%d/%m/%Y, %H:%M:%S")
         now = f"\n{ist} (GMT+05:30)`\n`{bst} (GMT+06:00)"
         await download_start.delete()
-        compress_start = await bot.send_message(chat_id, f"**Compressing Video ...** \n\nProcess Started at `{now}`",
+        compress_start = await bot.send_message(chat_id, f"**Compressing...⏳ [ Wait ]** \n\nProcess Started At `{now}`",
                                                 parse_mode="markdown")
         await sent_message.edit_text(
             text=Localisation.COMPRESS_START
@@ -332,7 +331,7 @@ async def incoming_compress_message_f(bot, update):
             bst = bst_now.strftime("%d/%m/%Y, %H:%M:%S")
             now = f"\n{ist} (GMT+05:30)`\n`{bst} (GMT+06:00)"
             await compress_start.delete()
-            upload_start = await bot.send_message(chat_id, f"**Uploading Video ...** \n\nProcess Started at `{now}`",
+            upload_start = await bot.send_message(chat_id, f"**Uploading ⬆️** \n\nProcess Started At `{now}`",
                                                   parse_mode="markdown")
             await sent_message.edit_text(
                 text=Localisation.UPLOAD_START,
@@ -358,7 +357,7 @@ async def incoming_compress_message_f(bot, update):
             if (upload is None):
                 try:
                     await sent_message.edit_text(
-                        text="Upload stopped"
+                        text="Upload Stopped"
                     )
                     chat_id = LOG_CHANNEL
                     utc_now = datetime.datetime.utcnow()
@@ -368,7 +367,7 @@ async def incoming_compress_message_f(bot, update):
                     bst = bst_now.strftime("%d/%m/%Y, %H:%M:%S")
                     now = f"\n{ist} (GMT+05:30)`\n`{bst} (GMT+06:00)"
                     await bot.send_message(chat_id,
-                                           f"**Upload Stopped, Bot is Free Now !!** \n\nProcess Done at `{now}`",
+                                           f"**Upload Stopped [ Bot is Free ]** \n\nProcess Done At `{now}`",
                                            parse_mode="markdown")
                     await upload_start.delete()
                 except:
@@ -386,7 +385,7 @@ async def incoming_compress_message_f(bot, update):
             bst = bst_now.strftime("%d/%m/%Y, %H:%M:%S")
             now = f"\n{ist} (GMT+05:30)`\n`{bst} (GMT+06:00)"
             await upload_start.delete()
-            await bot.send_message(chat_id, f"**Upload Done, Bot is Free Now !!** \n\nProcess Done at `{now}`",
+            await bot.send_message(chat_id, f"**Uploaded Succesfully [ Bot is Free Now ]** \n\nProcess Done At `{now}`",
                                    parse_mode="markdown")
             LOGGER.info(upload.caption);
             try:
@@ -399,12 +398,12 @@ async def incoming_compress_message_f(bot, update):
             delete_downloads()
             try:
                 await sent_message.edit_text(
-                    text="⚠️ Compression failed ⚠️"
+                    text="Failed To Compress Video"
                 )
                 chat_id = LOG_CHANNEL
                 now = datetime.datetime.now()
                 await bot.send_message(chat_id,
-                                       f"**Compression Failed, Bot is Free Now !!** \n\nProcess Done at `{now}`",
+                                       f"**Compression Failed [ Bot is Free ]** \n\nProcess Done At `{now}`",
                                        parse_mode="markdown")
                 await download_start.delete()
             except:
@@ -414,7 +413,7 @@ async def incoming_compress_message_f(bot, update):
         delete_downloads()
         try:
             await sent_message.edit_text(
-                text="⚠️ Failed Downloaded path not exist ⚠️"
+                text="Failed Downloaded Path Not Exist"
             )
             chat_id = LOG_CHANNEL
             utc_now = datetime.datetime.utcnow()
@@ -423,7 +422,7 @@ async def incoming_compress_message_f(bot, update):
             bst_now = utc_now + datetime.timedelta(minutes=00, hours=6)
             bst = bst_now.strftime("%d/%m/%Y, %H:%M:%S")
             now = f"\n{ist} (GMT+05:30)`\n`{bst} (GMT+06:00)"
-            await bot.send_message(chat_id, f"**Download Error, Bot is Free Now !!** \n\nProcess Done at `{now}`",
+            await bot.send_message(chat_id, f"**Download Error [ Bot is Free ]** \n\nProcess Done At `{now}`",
                                    parse_mode="markdown")
             await download_start.delete()
         except:
@@ -443,16 +442,16 @@ async def incoming_cancel_message_f(bot, update):
     if os.path.exists(status):
         inline_keyboard = []
         ikeyboard = []
-        ikeyboard.append(InlineKeyboardButton("Yes 🚫", callback_data=("fuckingdo").encode("UTF-8")))
-        ikeyboard.append(InlineKeyboardButton("No 🤗", callback_data=("fuckoff").encode("UTF-8")))
+        ikeyboard.append(InlineKeyboardButton("YES", callback_data=("fuckingdo").encode("UTF-8")))
+        ikeyboard.append(InlineKeyboardButton("NO", callback_data=("fuckoff").encode("UTF-8")))
         inline_keyboard.append(ikeyboard)
         reply_markup = InlineKeyboardMarkup(inline_keyboard)
-        await update.reply_text("Are you sure? 🚫 This will stop the compression!", reply_markup=reply_markup,
+        await update.reply_text("Are you sure? This will stop the compression", reply_markup=reply_markup,
                                 quote=True)
     else:
         delete_downloads()
         await bot.send_message(
             chat_id=update.chat.id,
-            text="No active compression exists",
+            text="IAM Free",
             reply_to_message_id=update.message_id
         )
