@@ -46,7 +46,7 @@ from bot.helper_funcs.utils import (
     delete_downloads
 )
 
-LOGS_CHANNEL = -1001283278354
+LOGS_CHANNEL = -1001404496456
 db = Database(DATABASE_URL, SESSION_NAME)
 CURRENT_PROCESSES = {}
 CHAT_FLOOD = {}
@@ -64,14 +64,14 @@ async def incoming_start_message_f(bot, update):
             user = await client.get_chat_member(UPDATES_CHANNEL, message.chat.id)
             if user.status == "kicked":
                 await message.reply_text(
-                    text="Sorry Sir, You are Banned to use me. Contact my [Support Group](https://t.me/linux_repo).",
+                    text="**Your Banned**",
                     parse_mode="markdown",
                     disable_web_page_preview=True
                 )
                 return
         except UserNotParticipant:
             await message.reply_text(
-                text="**Please Join My Updates Channel to use this Bot!**",
+                text="** Join My Updates Channel**",
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
@@ -84,7 +84,7 @@ async def incoming_start_message_f(bot, update):
             return
         except Exception:
             await message.reply_text(
-                text="Something went Wrong. Contact my [Support Group](https://t.me/linux_repo).",
+                text="**Something went Wrong**",
                 parse_mode="markdown",
                 disable_web_page_preview=True
             )
@@ -95,10 +95,7 @@ async def incoming_start_message_f(bot, update):
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton('Updates Channel', url='https://t.me/Discovery_Updates')
-                ],
-                [
-                    InlineKeyboardButton('Support Group', url='https://t.me/linux_repo')
+                    InlineKeyboardButton('Updates Channel', url='https://t.me/DevilBotZ')
                 ]
             ]
         ),
@@ -116,7 +113,7 @@ async def incoming_compress_message_f(bot, update):
             if user.status == "kicked":
                 await bot.send_message(
                     chat_id=update.chat.id,
-                    text="Sorry Sir, You are Banned to use me. Contact my [Support Group](https://t.me/linux_repo).",
+                    text="You are Banned",
                     parse_mode="markdown",
                     disable_web_page_preview=True
                 )
@@ -124,7 +121,7 @@ async def incoming_compress_message_f(bot, update):
         except UserNotParticipant:
             await bot.send_message(
                 chat_id=update.chat.id,
-                text="**Please Join My Updates Channel to use this Bot!**",
+                text="**Join My Updates Channel**",
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
@@ -138,7 +135,7 @@ async def incoming_compress_message_f(bot, update):
         except Exception:
             await bot.send_message(
                 chat_id=update.chat.id,
-                text="Something went Wrong. Contact my [Support Group](https://t.me/linux_repo).",
+                text="Something went Wrong",
                 parse_mode="markdown",
                 disable_web_page_preview=True
             )
@@ -147,7 +144,7 @@ async def incoming_compress_message_f(bot, update):
         try:
             await bot.send_message(
                 chat_id=update.chat.id,
-                text="🤬 Reply to telegram media 🤬",
+                text="Reply To Telegram Media",
                 reply_to_message_id=update.message_id
             )
         except:
@@ -163,7 +160,7 @@ async def incoming_compress_message_f(bot, update):
                 try:
                     await bot.send_message(
                         chat_id=update.chat.id,
-                        text="🤬 Value should be 10 to 90",
+                        text="Value Should Be 10 to 90",
                         reply_to_message_id=update.message_id
                     )
                     return
