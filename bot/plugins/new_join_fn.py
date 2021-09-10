@@ -73,7 +73,7 @@ async def help_message_f(client, message):
         Localisation.HELP_MESSAGE,
         reply_markup=InlineKeyboardMarkup(
             [[
-                    InlineKeyboardButton('Updates Channel', url='https://t.me/David_Botz')
+                    InlineKeyboardButton('Updates Channel', url='https://t.me/DevilBotz')
             ]]
         ),
         quote=True
